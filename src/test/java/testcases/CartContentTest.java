@@ -12,7 +12,7 @@ import utils.JsonReader;
 @Epic("ECommerce Test")
 @Feature("Cart content test")
 
-public class CartContent extends BaseTest {
+public class CartContentTest extends BaseTest {
     private final String filePath = FrameworkConstants.JSON_TEST_DATA;
     private final TestData testData = JsonReader.readJson(filePath, TestData.class);
     @Test

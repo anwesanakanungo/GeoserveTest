@@ -7,7 +7,7 @@
     <test name="TestEcommerce">
         <classes>
             <class name="testcases.ProductSearchTest" />
-            <class name="testcases.CartContent" />
+            <class name="testcases.CartContentTest" />
             <class name="testcases.CheckoutTest" />
             <class name="testcases.TestRandomData" />
         </classes>
