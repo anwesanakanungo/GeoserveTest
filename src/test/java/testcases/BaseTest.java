@@ -8,13 +8,14 @@ import org.testng.annotations.BeforeMethod;
 
 public class BaseTest {
     protected WebDriver driver;
+    private DriverManager driverManager;
     @BeforeMethod
     public void beforeMethod() {
-        DriverManager driverManager = DriverManagerFactory.getManager(DriverType.CHROME);
+        driverManager = DriverManagerFactory.getManager(DriverType.CHROME);
         this.driver = driverManager.getDriver();
     }
     @AfterMethod
     public void tearDown() {
-        this.driver.quit();
+        driverManager.quitDriver();
     }
 }
