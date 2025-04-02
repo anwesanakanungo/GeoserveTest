@@ -20,7 +20,7 @@ public class CheckoutTest extends BaseTest {
 @Story("Checkout test")
 @Severity(SeverityLevel.NORMAL)
     @Test
-    public void cartContentTest() throws InterruptedException {
+    public void cartContentTest(){
     HomePage homePage = new HomePage(driver);
         CheckoutPage checkoutPage = homePage
                 .goTo(ConfigReader.getValue("base-url"))

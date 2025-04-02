@@ -19,7 +19,7 @@ public class CartContent extends BaseTest {
     @Story("Cart content test")
     @Severity(SeverityLevel.NORMAL)
 
-    public void cartContentTest() throws InterruptedException {
+    public void cartContentTest()  {
         HomePage homePage = new HomePage(driver);
         CartPage cartPage= homePage.
                 goTo(ConfigReader.getValue("base-url"))
