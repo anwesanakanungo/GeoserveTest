@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 public final class RandomUtil {
 
     public static String getNumber() {
-      return String.valueOf(FakerUtil.getNumber());
+        return String.valueOf(FakerUtil.getNumber());
     }
 
     public static String getFirstName() {
@@ -21,12 +21,15 @@ public final class RandomUtil {
     public static String getEmail() {
         return FakerUtil.getEmail();
     }
+
     public static String getCity() {
         return FakerUtil.getCity();
     }
+
     public static String getAddress() {
         return FakerUtil.getAddress();
     }
+
     public static String getCompany() {
         return FakerUtil.getCompany();
     }

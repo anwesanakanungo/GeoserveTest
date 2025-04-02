@@ -5,39 +5,40 @@ import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-    public final class FakerUtil {
+public final class FakerUtil {
 
-        static Faker faker = new Faker();
+    static Faker faker = new Faker();
 
 
-        public static int getNumber() {
+    public static int getNumber() {
 
-            return Integer.max(12341,43331);
-        }
+        return Integer.max(12341, 43331);
+    }
 
-        public static String getEmail() {
+    public static String getEmail() {
 
-            return faker.name().firstName() + "@gmail.com";
-        }
+        return faker.name().firstName() + "@gmail.com";
+    }
 
-        public static String getFirstName() {
+    public static String getFirstName() {
 
-            return faker.name().firstName();
-        }
+        return faker.name().firstName();
+    }
 
-        public static String getLastName() {
+    public static String getLastName() {
 
-            return faker.name().lastName();
-        }
+        return faker.name().lastName();
+    }
 
-        public static String getCity() {
+    public static String getCity() {
 
-            return faker.address().city();
-        }
+        return faker.address().city();
+    }
 
-       public static String getAddress() {
-           return faker.address().streetAddress();
-        }
+    public static String getAddress() {
+        return faker.address().streetAddress();
+    }
+
     public static String getCompany() {
         return faker.company().name();
     }

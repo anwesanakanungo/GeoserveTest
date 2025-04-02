@@ -12,24 +12,25 @@ import pojo.TestData;
 import utils.JsonReader;
 
 import java.util.List;
+
 @Epic("ECommerce Test")
 @Feature("Product Search test")
-public class ProductSearchTest extends BaseTest{
+public class ProductSearchTest extends BaseTest {
     private final String filePath = FrameworkConstants.JSON_TEST_DATA;
     private final TestData testData = JsonReader.readJson(filePath, TestData.class);
+
     @Story("Product Search test")
     @Severity(SeverityLevel.NORMAL)
     @SneakyThrows
     @Test
-    public void productSearchTest(){
+    public void productSearchTest() {
         HomePage homePage = new HomePage(driver);
         StorePage storePage = homePage
-                 .goTo(ConfigReader.getValue("base-url"))
-                 .clickOnStore()
-                 .enterTextToSearch(testData.getSearch())
-                 .clickOnSearchBtn();
-        List<String> actualResult=storePage.allSearchResults();
-        Assert.assertListContainsObject(actualResult,testData.getProductName(),"Search Contains message");
-
+                .goTo(ConfigReader.getValue("base-url"))
+                .clickOnStore()
+                .enterTextToSearch(testData.getSearch())
+                .clickOnSearchBtn();
+        List<String> actualResult = storePage.allSearchResults();
+        Assert.assertListContainsObject(actualResult, testData.getProductName(), "Search Contains message");
     }
 }

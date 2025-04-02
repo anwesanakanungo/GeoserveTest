@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import java.io.File;
 import java.io.IOException;
+
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class JsonReader {
     public static <T> T readJson(String filePath, Class<T> clazz) {

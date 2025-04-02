@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 public abstract class DriverManager {
     protected ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+
     protected abstract WebDriver createDriver();
 
     public void quitDriver() {
@@ -14,7 +15,6 @@ public abstract class DriverManager {
             } catch (Exception e) {
                 System.out.println(e);
             }
-
         }
     }
 
@@ -22,8 +22,6 @@ public abstract class DriverManager {
         if (null == driver.get()) {
             driver.set(this.createDriver());
         }
-
         return driver.get();
     }
-
 }

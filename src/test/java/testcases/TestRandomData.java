@@ -5,12 +5,11 @@ import io.qameta.allure.Feature;
 import org.testng.annotations.Test;
 import randomtestdata.RandomUtil;
 
-import java.util.Random;
 @Epic("ECommerce Test")
 @Feature("Random data test")
 public class TestRandomData {
     @Test
-    public void test1(){
+    public void test1() {
         System.out.println(RandomUtil.getFirstName());
         System.out.println(RandomUtil.getLastName());
         System.out.println(RandomUtil.getAddress());

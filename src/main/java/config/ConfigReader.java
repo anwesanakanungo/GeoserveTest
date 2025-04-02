@@ -8,6 +8,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Properties;
+
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class ConfigReader {
     private static final Properties properties = new Properties();
