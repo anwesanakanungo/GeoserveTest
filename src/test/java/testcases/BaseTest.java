@@ -11,11 +11,10 @@ import org.testng.annotations.BeforeTest;
 
 public class BaseTest {
     protected WebDriver driver ;
-   private DriverManager driverManager;
 
     @BeforeMethod
     public void beforeMethod() {
-        this.driverManager = DriverManagerFactory.getManager(DriverType.CHROME);
+        DriverManager driverManager = DriverManagerFactory.getManager(DriverType.CHROME);
         this.driver = driverManager.getDriver();
     }
     @AfterMethod

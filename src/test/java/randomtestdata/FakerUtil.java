@@ -21,14 +21,17 @@ import lombok.NoArgsConstructor;
         }
 
         public static String getFirstName() {
+
             return faker.name().firstName();
         }
 
-        static String getLastName() {
+        public static String getLastName() {
+
             return faker.name().lastName();
         }
 
         public static String getCity() {
+
             return faker.address().city();
         }
 

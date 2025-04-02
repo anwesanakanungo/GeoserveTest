@@ -6,11 +6,11 @@ import org.testng.ITestResult;
 public class RetryFailedTest implements IRetryAnalyzer {
 
     private int retryCount = 0;
-    private static final int maxRetryCount = constants.FrameworkConstants.RETRY_COUNT;
+    private static final int MAXRETRYCOUNT = constants.FrameworkConstants.RETRY_COUNT;
 
     @Override
     public boolean retry(ITestResult result) {
-        if (retryCount < maxRetryCount) {
+        if (retryCount < MAXRETRYCOUNT) {
             retryCount++;
             return true;
         }
