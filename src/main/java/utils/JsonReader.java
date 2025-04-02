@@ -1,11 +1,13 @@
 package utils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
 import java.io.File;
 import java.io.IOException;
-
-public class JsonReader {
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+public final class JsonReader {
     public static <T> T readJson(String filePath, Class<T> clazz) {
         ObjectMapper objectMapper = new ObjectMapper();
         T data = null;
