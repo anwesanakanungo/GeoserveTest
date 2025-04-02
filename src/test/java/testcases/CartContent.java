@@ -14,7 +14,7 @@ import utils.JsonReader;
 
 public class CartContent extends BaseTest {
     private final String filePath = FrameworkConstants.JSON_TEST_DATA;
-    private TestData testData = JsonReader.readJson(filePath, TestData.class);
+    private final TestData testData = JsonReader.readJson(filePath, TestData.class);
     @Test
     @Story("Cart content test")
     @Severity(SeverityLevel.NORMAL)

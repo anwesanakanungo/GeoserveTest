@@ -6,7 +6,6 @@ import io.qameta.allure.*;
 import lombok.SneakyThrows;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.CartPage;
 import pages.CheckoutPage;
 import pages.HomePage;
 import pojo.TestData;
@@ -21,7 +20,7 @@ public class CheckoutTest extends BaseTest {
 @Story("Checkout test")
 @Severity(SeverityLevel.NORMAL)
     @Test
-    public void cartContenetTest() throws InterruptedException {
+    public void cartContentTest() throws InterruptedException {
     HomePage homePage = new HomePage(driver);
         CheckoutPage checkoutPage = homePage
                 .goTo(ConfigReader.getValue("base-url"))

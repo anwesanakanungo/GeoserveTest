@@ -14,7 +14,6 @@ public class StorePage extends BasePage{
     }
     private final By searchInput = By.cssSelector("#woocommerce-product-search-field-0");
     private final By searchBtn = By.xpath("//button[normalize-space()='Search']");
-    private final By searchResult = By.cssSelector(".woocommerce-products-header__title.page-title");
     private final By addToCartBtn=By.cssSelector("a[aria-label='Add “Basic Blue Jeans” to your cart']");
     private final By viewCart=By.cssSelector("a[title='View cart']");
     private final By allSearchResult=By.xpath("//h2[@class='woocommerce-loop-product__title']");
@@ -27,14 +26,12 @@ public class StorePage extends BasePage{
         wait.until(ExpectedConditions.elementToBeClickable(searchBtn)).click();
         return this;
     }
-    public String getSearchTitle(){
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(searchResult)).getText();
-    }
+
     public StorePage clickAddToCart(){
         wait.until(ExpectedConditions.elementToBeClickable(addToCartBtn)).click();
         return this;
     }
-    public CartPage clickViewCart() throws InterruptedException {
+    public CartPage clickViewCart() {
         wait.until(ExpectedConditions.elementToBeClickable(viewCart)).click();
         return new CartPage(driver);
     }

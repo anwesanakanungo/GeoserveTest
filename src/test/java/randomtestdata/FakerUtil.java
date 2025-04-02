@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 
         public static String getEmail() {
 
-            return String.valueOf(faker.name().firstName() + "@gmail.com");
+            return faker.name().firstName() + "@gmail.com";
         }
 
         public static String getFirstName() {
