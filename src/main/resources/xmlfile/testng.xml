@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestEcommerce">
+    <listeners>
+        <listener class-name="listerners.AnnotationTransformer"/>
+    </listeners>
+    <test name="TestEcommerce">
+        <classes>
+            <class name="testcases.ProductSearchTest" />
+            <class name="testcases.CartContent" />
+            <class name="testcases.CheckoutTest" />
+            <class name="testcases.TestRandomData" />
+        </classes>
+    </test>
+
+</suite>
