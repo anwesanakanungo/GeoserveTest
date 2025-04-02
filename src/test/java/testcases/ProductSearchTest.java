@@ -16,7 +16,7 @@ import java.util.List;
 @Feature("Product Search test")
 public class ProductSearchTest extends BaseTest{
     private HomePage homePage ;
-    String filePath = FrameworkConstants.JSON_TEST_DATA;
+    private String filePath = FrameworkConstants.JSON_TEST_DATA;
     TestData testData = JsonReader.readJson(filePath, TestData.class);
     @Story("Product Search test")
     @Severity(SeverityLevel.NORMAL)
@@ -28,7 +28,7 @@ public class ProductSearchTest extends BaseTest{
                 goTo(ConfigReader.getValue("base-url"))
                 .clickOnStore()
                 .enterTextToSearch(testData.getSearch())
-                .clickOnSearchbtn();
+                .clickOnSearchBtn();
         List<String> actualResult=storePage.allSearchResults();
         Assert.assertListContainsObject(actualResult,testData.getProductName(),"Search Contains message");
 

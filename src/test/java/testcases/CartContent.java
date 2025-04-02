@@ -29,10 +29,10 @@ public class CartContent extends BaseTest {
                 goTo(ConfigReader.getValue("base-url"))
                 .clickOnStore()
                 .enterTextToSearch(testData.getSearch())
-                .clickOnSearchbtn()
+                .clickOnSearchBtn()
                 .clickAddToCart()
                 .clickViewCart();
-        String actualResult= cartPage.productDetails();
+        String actualResult= cartPage.getProductDetails();
         Assert.assertEquals(actualResult,testData.getProductName());
 
     }

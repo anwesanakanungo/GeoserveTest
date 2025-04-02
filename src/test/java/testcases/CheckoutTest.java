@@ -28,7 +28,7 @@ public class CheckoutTest extends BaseTest {
                 .goTo(ConfigReader.getValue("base-url"))
                 .clickOnStore()
                 .enterTextToSearch(testData.getSearch())
-                .clickOnSearchbtn()
+                .clickOnSearchBtn()
                 .clickAddToCart()
                 .clickViewCart()
                 .clickOnCart()

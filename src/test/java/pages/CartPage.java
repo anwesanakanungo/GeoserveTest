@@ -15,7 +15,7 @@ public class CartPage extends BasePage{
         wait.until(ExpectedConditions.elementToBeClickable(viewCart)).click();
         return new CheckoutPage(driver);
     }
-   public String productDetails(){
+   public String getProductDetails(){
     return wait.until(ExpectedConditions.visibilityOfElementLocated(product)).getText();
     }
 }

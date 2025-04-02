@@ -11,7 +11,7 @@ import org.testng.annotations.BeforeTest;
 
 public class BaseTest {
     protected WebDriver driver ;
-    DriverManager driverManager;
+   private DriverManager driverManager;
 
     @BeforeMethod
     public void beforeMethod() {
@@ -20,6 +20,7 @@ public class BaseTest {
     }
     @AfterMethod
     public void tearDown(){
-       this.driver.quit();
+
+        this.driver.quit();
     }
 }

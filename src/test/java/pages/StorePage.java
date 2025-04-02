@@ -23,7 +23,7 @@ public class StorePage extends BasePage{
         wait.until(ExpectedConditions.visibilityOfElementLocated(searchInput)).sendKeys(textSearch);
         return this;
     }
-    public StorePage clickOnSearchbtn(){
+    public StorePage clickOnSearchBtn(){
         wait.until(ExpectedConditions.elementToBeClickable(searchBtn)).click();
         return this;
     }
