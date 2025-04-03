@@ -4,7 +4,7 @@ Frame work support :
  Design pattern used :
 1.	Factory design pattern (Browser support , CHORME and Firefox . it can be extended any number of Browsers )
 2.	Page objects model  fluent style
-3.	3.	Support parallel testing. (Need to update testing.xml <suite name="TestEcommerce" parallel="methods" thread-count="4"> )
+3.	Support parallel testing. (Need to update testing.xml <suite name="TestEcommerce" parallel="methods" thread-count="4"> )
 4.	Configuration file stored in the resource/config/ config.properites
 5.	Static Test like search text ,product details are taken from src/main/resources/jsonfile/testData.json 
 6.	Dynamic test data is generated using JAVA faker .
