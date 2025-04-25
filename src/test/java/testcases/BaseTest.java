@@ -11,11 +11,12 @@ public class BaseTest {
     private DriverManager driverManager;
     @BeforeMethod
     public void beforeMethod() {
-        driverManager = DriverManagerFactory.getManager(DriverType.CHROME);
+        this.driverManager = DriverManagerFactory.getManager(DriverType.CHROME);
         this.driver = driverManager.getDriver();
     }
     @AfterMethod
     public void tearDown() {
-        driverManager.quitDriver();
+        this.driverManager.quitDriver();
     }
+
 }

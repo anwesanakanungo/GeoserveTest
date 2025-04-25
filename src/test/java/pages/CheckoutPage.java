@@ -14,6 +14,12 @@ public class CheckoutPage extends BasePage {
     private final By cityId = By.id("billing_city");
     private final By placeOrderBtn = By.id("place_order");
     private final By orderConfirmation = By.xpath("//p[@class='woocommerce-notice woocommerce-notice--success woocommerce-thankyou-order-received']");
+
+    @Override
+    public boolean isDisplayed() {
+        return  wait.until(ExpectedConditions.visibilityOfElementLocated(firstName)).isDisplayed();
+    }
+
     public CheckoutPage(WebDriver driver) {
         super(driver);
     }

@@ -15,6 +15,11 @@ public class StorePage extends BasePage {
     private final By viewCart = By.cssSelector("a[title='View cart']");
     private final By allSearchResult = By.xpath("//h2[@class='woocommerce-loop-product__title']");
 
+    @Override
+    public boolean isDisplayed() {
+        return  wait.until(ExpectedConditions.visibilityOfElementLocated(searchInput)).isDisplayed();
+    }
+
     public StorePage(WebDriver driver) {
         super(driver);
     }

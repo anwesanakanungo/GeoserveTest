@@ -7,4 +7,5 @@ public class TestData {
     private int total;
     private String productName;
     private String checkoutMessage;
+    private String higestPriceMenItem;
 }

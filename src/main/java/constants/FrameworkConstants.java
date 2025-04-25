@@ -9,4 +9,5 @@ public final class FrameworkConstants {
     public static final int DEFAULT_WAITING_TIME = 20;
     public static final int RETRY_COUNT = 3;
     public static final String JSON_TEST_DATA = "src/main/resources/jsonfile/testData.json";
+    public static final String JSON_TEST_DATA_COTACTUSPAGE = "src/main/resources/jsonfile/contactUsTestData.json";
 }

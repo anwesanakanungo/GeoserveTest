@@ -13,7 +13,7 @@ public class ChromeDriverManager extends DriverManager {
     }
 
     private ChromeOptions getChromeOptions() {
-        ChromeOptions options = new ChromeOptions();
+        final ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-notifications");
         options.addArguments("--start-maximized");
         options.addArguments("--disable-features=EnableEphemeralFlashPermission");
