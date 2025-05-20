@@ -12,6 +12,7 @@
             <class name="testcases.TestRandomData" />
             <class name="testcases.ContactUsPageTest" />
             <class name="testcases.HighestPriceForMensTest" />
+            <class name="testcases.RegisterPageTest" />
         </classes>
     </test>
 
