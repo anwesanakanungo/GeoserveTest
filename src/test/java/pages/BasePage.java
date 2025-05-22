@@ -13,6 +13,6 @@ public abstract class BasePage {
     public abstract boolean isDisplayed();
     public BasePage(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(FrameworkConstants.DEFAULT_WAITING_TIME));
+        //this.wait = new WebDriverWait(driver, Duration.ofSeconds(FrameworkConstants.DEFAULT_WAITING_TIME));
     }
 }

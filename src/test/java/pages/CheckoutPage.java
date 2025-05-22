@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import utils.ui.ElementActions;
 
 public class CheckoutPage extends BasePage {
     private final By firstName = By.id("billing_first_name");
@@ -14,10 +15,11 @@ public class CheckoutPage extends BasePage {
     private final By cityId = By.id("billing_city");
     private final By placeOrderBtn = By.id("place_order");
     private final By orderConfirmation = By.xpath("//p[@class='woocommerce-notice woocommerce-notice--success woocommerce-thankyou-order-received']");
+    ElementActions actions = new ElementActions(driver);
 
     @Override
     public boolean isDisplayed() {
-        return  wait.until(ExpectedConditions.visibilityOfElementLocated(firstName)).isDisplayed();
+        return actions.isElementDisplay(firstName);
     }
 
     public CheckoutPage(WebDriver driver) {
@@ -25,43 +27,50 @@ public class CheckoutPage extends BasePage {
     }
 
     public CheckoutPage enterFirstName(String firstname) {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(firstName)).sendKeys(firstname);
+        actions.sendKeysToElement(firstName,firstname);
         return this;
     }
 
     public CheckoutPage enterLastName(String lastname) {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(lastName)).sendKeys(lastname);
+        //wait.until(ExpectedConditions.visibilityOfElementLocated(lastName)).sendKeys(lastname);
+        actions.sendKeysToElement(lastName,lastname);
         return this;
     }
 
     public CheckoutPage enterCompanyName(String companyname) {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(companyName)).sendKeys(companyname);
+       // wait.until(ExpectedConditions.visibilityOfElementLocated(companyName)).sendKeys(companyname);
+        actions.sendKeysToElement(companyName,companyname);
         return this;
     }
 
     public CheckoutPage enterCityName(String cityname) {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(cityId)).sendKeys(cityname);
+       // wait.until(ExpectedConditions.visibilityOfElementLocated(cityId)).sendKeys(cityname);
+        actions.sendKeysToElement(cityId,cityname);
         return this;
     }
 
     public CheckoutPage enterAddress(String address) {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(addressName)).sendKeys(address);
+        //wait.until(ExpectedConditions.visibilityOfElementLocated(addressName)).sendKeys(address);
+        actions.sendKeysToElement(addressName,address);
         return this;
     }
 
     public CheckoutPage enterZip(String zip) {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(zipName)).sendKeys(zip);
+        //wait.until(ExpectedConditions.visibilityOfElementLocated(zipName)).sendKeys(zip);
+        actions.sendKeysToElement(zipName,zip);
         return this;
     }
 
     public CheckoutPage enterEmail(String email) {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(emailId)).sendKeys(email);
+        //wait.until(ExpectedConditions.visibilityOfElementLocated(emailId)).sendKeys(email);
+        actions.sendKeysToElement(emailId,email);
         return this;
     }
 
     public CheckoutPage clickPlaceOrderBtn() throws InterruptedException {
         Thread.sleep(3000);
-        wait.until(ExpectedConditions.elementToBeClickable(placeOrderBtn)).click();
+      //  wait.until(ExpectedConditions.elementToBeClickable(placeOrderBtn)).click();
+        actions.clickElement(placeOrderBtn);
         return this;
     }
 

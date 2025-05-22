@@ -4,11 +4,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import utils.ui.ElementActions;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class StorePage extends BasePage {
+    ElementActions actions = new ElementActions(driver);
     private final By searchInput = By.cssSelector("#woocommerce-product-search-field-0");
     private final By searchBtn = By.xpath("//button[normalize-space()='Search']");
     private final By addToCartBtn = By.cssSelector("a[aria-label='Add “Basic Blue Jeans” to your cart']");
@@ -17,7 +19,7 @@ public class StorePage extends BasePage {
 
     @Override
     public boolean isDisplayed() {
-        return  wait.until(ExpectedConditions.visibilityOfElementLocated(searchInput)).isDisplayed();
+        return this.actions.isElementDisplay(searchInput);
     }
 
     public StorePage(WebDriver driver) {
@@ -25,22 +27,22 @@ public class StorePage extends BasePage {
     }
 
     public StorePage enterTextToSearch(String textSearch) {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(searchInput)).sendKeys(textSearch);
+        this.actions.sendKeysToElement(searchInput,textSearch);
         return this;
     }
 
     public StorePage clickOnSearchBtn() {
-        wait.until(ExpectedConditions.elementToBeClickable(searchBtn)).click();
+        this.actions.clickElement(searchBtn);
         return this;
     }
 
     public StorePage clickAddToCart() {
-        wait.until(ExpectedConditions.elementToBeClickable(addToCartBtn)).click();
+        this.actions.clickElement(addToCartBtn);
         return this;
     }
 
     public CartPage clickViewCart() {
-        wait.until(ExpectedConditions.elementToBeClickable(viewCart)).click();
+        this.actions.clickElement(viewCart);
         return new CartPage(driver);
     }
 

@@ -8,8 +8,6 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 import java.util.stream.Collectors;
 public class MenPage extends BasePage{
-
-
     public MenPage(WebDriver driver) {
         super(driver);
     }
