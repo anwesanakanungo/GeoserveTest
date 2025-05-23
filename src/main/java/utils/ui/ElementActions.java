@@ -5,6 +5,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+
+import java.util.function.Consumer;
 
 public class ElementActions {
     private WebDriver driver;
@@ -93,5 +96,17 @@ public class ElementActions {
     public boolean isElementDisplay(By locator) {
          return waitHelper.waitForElementToBeVisible(locator).isDisplayed();
     }
+//Select element
+public void selectFromDropdown(By locator, Consumer<Select> selectionLogic) {
+    WebElement dropdownElement = driver.findElement(locator);
+    Select select = new Select(dropdownElement);
+    selectionLogic.accept(select);
+}
+    public void selectFromDropdown(By locator, Consumer<Select> selectionLogic, int timeoutSeconds) {
+      WebElement dropdownElement = waitHelper.waitForElementToBeClickable(locator);
+        Select select = new Select(dropdownElement);
+        selectionLogic.accept(select);
+    }
+
 
 }
