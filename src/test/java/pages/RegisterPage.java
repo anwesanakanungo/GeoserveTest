@@ -1,12 +1,11 @@
 package pages;
 
+import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import pojo.Register;
 import utils.ui.ElementActions;
-import utils.ui.SeleniumWaitHelper;
-
+@Slf4j
 public class RegisterPage extends BasePage {
 
     public RegisterPage(WebDriver driver) {
@@ -30,19 +29,27 @@ public class RegisterPage extends BasePage {
     }
     public RegisterPage goTo(String url) {
         this.driver.get(url);
+        log.info("login to register page");
         return this;
     }
     public RegisterPage registerUser(Register register){
         this.actions.sendKeysToElement(usernameField,register.getUsername());
+        log.info("Enter login data");
         this.actions.sendKeysToElement(emailField,register.getEmailaddress());
+        log.info("Enter email data");
         this.actions.sendKeysToElement(passwordField,register.getPassword());
+        log.info("Enter password data");
         this.actions.clickElement(registerField);
+        log.info("click on register user");
         return this;
     }
     public void loginToApp(Register register){
         this.actions.sendKeysToElement(userName,register.getUsername());
+        log.info("Enter username data");
         this.actions.sendKeysToElement(password,register.getPassword());
+        log.info("Enter password");
         this.actions.clickElement(loginBtn);
+        log.info("click login button");
     }
 
 }

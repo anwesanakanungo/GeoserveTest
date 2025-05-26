@@ -1,14 +1,16 @@
 package pages;
 
 import lombok.SneakyThrows;
+import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import utils.ui.ElementActions;
-import utils.ui.SeleniumWaitHelper;
 
 
+@Slf4j
 public class ContactUsPage extends BasePage {
+
     private final By emailAddress = By.xpath("//strong[text()='askomdch@gmail.com']");
     private final By contactUsText = By.xpath("//h1[text()='Contact Us']");
     ElementActions actions = new ElementActions(driver);

@@ -13,6 +13,10 @@
             <class name="testcases.ContactUsPageTest" />
             <class name="testcases.HighestPriceForMensTest" />
             <class name="testcases.RegisterPageTest" />
+            <class name="testcases.AboutUsPageTest" />
+            <class name="testcases.HomePageFindMoreTest" />
+            <class name="testcases.NumberOfProductOnSaleTest" />
+            <class name="testcases.StorePageTest" />
         </classes>
     </test>
 

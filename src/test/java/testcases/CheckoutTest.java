@@ -4,14 +4,15 @@ import config.ConfigReader;
 import constants.FrameworkConstants;
 import io.qameta.allure.*;
 import lombok.SneakyThrows;
+import lombok.extern.slf4j.Slf4j;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.CheckoutPage;
 import pages.HomePage;
 import pojo.TestData;
 import randomtestdata.RandomUtil;
-import utils.JsonReader;
-
+import utils.datautil.JsonReader;
+@Slf4j
 @Epic("ECommerce Test")
 @Feature("Checkout test")
 public class CheckoutTest extends BaseTest {
@@ -42,5 +43,6 @@ public class CheckoutTest extends BaseTest {
                 .clickPlaceOrderBtn();
         String actualResult = checkoutPage.getTitle();
         Assert.assertEquals(actualResult, testData.getCheckoutMessage());
+        log.info("Actual text" +actualResult +"expected" +testData.getCheckoutMessage() );
     }
 }

@@ -1,4 +1,4 @@
-package utils;
+package utils.datautil;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AccessLevel;

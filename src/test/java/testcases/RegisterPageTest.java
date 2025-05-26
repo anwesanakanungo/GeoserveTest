@@ -19,7 +19,5 @@ public class RegisterPageTest extends BaseTest{
     registerPage.registerUser(register);
     registerPage.loginToApp(register);
     Assert.assertTrue(registerPage.isDisplayed());
-
-
 }
 }

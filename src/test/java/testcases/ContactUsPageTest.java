@@ -2,15 +2,14 @@ package testcases;
 
 import config.ConfigReader;
 import constants.FrameworkConstants;
+import lombok.extern.slf4j.Slf4j;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.ContactUsPage;
 import pages.HomePage;
-import pages.MenPage;
 import pojo.ContactUsPageTestData;
-import pojo.TestData;
-import utils.JsonReader;
-
+import utils.datautil.JsonReader;
+@Slf4j
 public class ContactUsPageTest extends BaseTest{
     private final String filePath = FrameworkConstants.JSON_TEST_DATA_COTACTUSPAGE;
     private final ContactUsPageTestData contactUsPageTestData = JsonReader.readJson(filePath, ContactUsPageTestData.class);
@@ -22,6 +21,7 @@ public class ContactUsPageTest extends BaseTest{
                 .clickOnContact();
         String actaulResult= contactUsPage.getEmailAddress();
         Assert.assertEquals(actaulResult,contactUsPageTestData.getEmail());
+        log.info("Actual text" +actaulResult +"expected" +contactUsPageTestData.getEmail());
     }
     @Test
     public void contactPageTextTest(){
@@ -31,5 +31,6 @@ public class ContactUsPageTest extends BaseTest{
                 .clickOnContact();
         String actaulResultText= contactUsPage.getContactUsText();
         Assert.assertEquals(actaulResultText,contactUsPageTestData.getTextMessage());
+        log.info("Actual text" +actaulResultText +"expected" +contactUsPageTestData.getTextMessage());
     }
 }

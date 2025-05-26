@@ -2,14 +2,16 @@ package testcases;
 import config.ConfigReader;
 import constants.FrameworkConstants;
 import io.qameta.allure.*;
+import lombok.extern.slf4j.Slf4j;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.CartPage;
 import pages.HomePage;
 import pojo.TestData;
-import utils.JsonReader;
+import utils.datautil.JsonReader;
 @Epic("ECommerce Test")
 @Feature("Cart content test")
+@Slf4j
 public class CartContentTest extends BaseTest {
     private final String filePath = FrameworkConstants.JSON_TEST_DATA;
     private final TestData testData = JsonReader.readJson(filePath, TestData.class);
@@ -27,5 +29,6 @@ public class CartContentTest extends BaseTest {
                 .clickViewCart();
         String actualResult= cartPage.getProductDetails();
         Assert.assertEquals(actualResult,testData.getProductName());
+        log.info("Actual text" +actualResult +"expected" +testData.getProductName() );
     }
 }
