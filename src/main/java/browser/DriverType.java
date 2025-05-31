@@ -2,5 +2,6 @@ package browser;
 
 public enum DriverType {
     CHROME,
-    FIREFOX
+    FIREFOX,
+    CHROMEHEADLESS
 }
