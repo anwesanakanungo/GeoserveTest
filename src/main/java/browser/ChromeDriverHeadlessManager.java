@@ -9,7 +9,7 @@ public class ChromeDriverHeadlessManager extends DriverManager {
 
     @Override
     protected WebDriver createDriver() {
-        log.info("Start headless CHROME browser");
+        log.info("Start headless CHROME");
         return new ChromeDriver(getChromeOptions());
     }
 
