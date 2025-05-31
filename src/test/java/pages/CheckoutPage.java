@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import utils.ui.ElementActions;
 
+import static java.lang.Thread.sleep;
+
 public class CheckoutPage extends BasePage {
     private final By firstName = By.id("billing_first_name");
     private final By lastName = By.id("billing_last_name");
@@ -32,50 +34,43 @@ public class CheckoutPage extends BasePage {
     }
 
     public CheckoutPage enterLastName(String lastname) {
-        //wait.until(ExpectedConditions.visibilityOfElementLocated(lastName)).sendKeys(lastname);
         actions.sendKeysToElement(lastName,lastname);
         return this;
     }
 
     public CheckoutPage enterCompanyName(String companyname) {
-       // wait.until(ExpectedConditions.visibilityOfElementLocated(companyName)).sendKeys(companyname);
         actions.sendKeysToElement(companyName,companyname);
         return this;
     }
 
     public CheckoutPage enterCityName(String cityname) {
-       // wait.until(ExpectedConditions.visibilityOfElementLocated(cityId)).sendKeys(cityname);
         actions.sendKeysToElement(cityId,cityname);
         return this;
     }
 
     public CheckoutPage enterAddress(String address) {
-        //wait.until(ExpectedConditions.visibilityOfElementLocated(addressName)).sendKeys(address);
         actions.sendKeysToElement(addressName,address);
         return this;
     }
 
     public CheckoutPage enterZip(String zip) {
-        //wait.until(ExpectedConditions.visibilityOfElementLocated(zipName)).sendKeys(zip);
         actions.sendKeysToElement(zipName,zip);
         return this;
     }
 
     public CheckoutPage enterEmail(String email) {
-        //wait.until(ExpectedConditions.visibilityOfElementLocated(emailId)).sendKeys(email);
         actions.sendKeysToElement(emailId,email);
         return this;
     }
 
     public CheckoutPage clickPlaceOrderBtn() throws InterruptedException {
-        Thread.sleep(3000);
-      //  wait.until(ExpectedConditions.elementToBeClickable(placeOrderBtn)).click();
+        sleep(3000);
         actions.clickElement(placeOrderBtn);
         return this;
     }
 
     public String getTitle() throws InterruptedException {
-        Thread.sleep(4000);
+        sleep(4000);
         return driver.findElement(orderConfirmation).getText();
     }
 

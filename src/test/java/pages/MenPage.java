@@ -8,6 +8,9 @@ import utils.ui.ElementActions;
 
 import java.util.List;
 import java.util.stream.Collectors;
+
+import static java.lang.Thread.sleep;
+
 public class MenPage extends BasePage{
     public MenPage(WebDriver driver) {
         super(driver);
@@ -16,7 +19,7 @@ public class MenPage extends BasePage{
     private final By searchAllPrice=By.xpath("//span[@class='woocommerce-Price-amount amount']");
 @SneakyThrows
     public List<String> getAllItemPriceMen(){
-        Thread.sleep(2000);
+        sleep(2000);
         List<WebElement> elementList=driver.findElements(By.xpath("//span[@class='woocommerce-Price-amount amount']"));
         return elementList.stream().map(WebElement::getText).collect(Collectors.toList());
     }

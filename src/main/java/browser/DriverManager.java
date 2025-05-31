@@ -13,7 +13,7 @@ public abstract class DriverManager {
             try {
                 driver.get().quit();
                 log.info("quit driver");
-                //driver.remove();
+                /* driver.remove(); */
             } catch (Exception e) {
                 log.error("Failed to quit driver", e);
             }

@@ -25,7 +25,7 @@ public class HomePage extends BasePage {
 
     public HomePage goTo(String url) {
         this.driver.get(url);
-        log.info("Login to the website"  +url);
+        log.info("Login to the website ={}", url);
         return this;
     }
 
@@ -36,7 +36,7 @@ public class HomePage extends BasePage {
     }
     public MenPage clickOnMen() {
         actions.clickElement(menLink);
-        log.info("Login to the website menu link");
+        log.info(String.format("Login to the website men link = {}%s", menLink));
         return new MenPage(driver);
     }
     public ContactUsPage clickOnContact() {

@@ -29,6 +29,6 @@ public class CartContentTest extends BaseTest {
                 .clickViewCart();
         String actualResult= cartPage.getProductDetails();
         Assert.assertEquals(actualResult,testData.getProductName());
-        log.info("Actual text" +actualResult +"expected" +testData.getProductName() );
+        log.info("Actual text{}expected{}", actualResult, testData.getProductName());
     }
 }

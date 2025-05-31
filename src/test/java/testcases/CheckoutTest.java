@@ -43,6 +43,6 @@ public class CheckoutTest extends BaseTest {
                 .clickPlaceOrderBtn();
         String actualResult = checkoutPage.getTitle();
         Assert.assertEquals(actualResult, testData.getCheckoutMessage());
-        log.info("Actual text" +actualResult +"expected" +testData.getCheckoutMessage() );
+        log.info("Actual text{}expected{}", actualResult, testData.getCheckoutMessage());
     }
 }

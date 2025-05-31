@@ -3,7 +3,7 @@ package browser;
 public class DriverManagerFactory {
     public static DriverManager getManager(DriverType type) {
 
-        DriverManager driverManager;
+        DriverManager driverManager = null;
 
         switch (type) {
             case CHROME:
@@ -12,7 +12,6 @@ public class DriverManagerFactory {
             case CHROMEHEADLESS:
                 driverManager = new ChromeDriverHeadlessManager();
                 break;
-            default:
             case FIREFOX:
                 driverManager = new FirefoxDriverManager();
                 break;

@@ -8,6 +8,9 @@ import org.openqa.selenium.WebElement;
 import utils.ui.ElementActions;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import static java.lang.Thread.sleep;
+
 @Slf4j
 public class StorePage extends BasePage {
     ElementActions actions = new ElementActions(driver);
@@ -56,7 +59,7 @@ public class StorePage extends BasePage {
     }
 
     public List<String> allSearchResults() throws InterruptedException {
-        Thread.sleep(2000);
+        sleep(2000);
         List<WebElement> elementList = driver.findElements(allSearchResult);
         return elementList.stream().map(WebElement::getText).collect(Collectors.toList());
     }
@@ -82,7 +85,7 @@ public class StorePage extends BasePage {
     }
    @SneakyThrows
    public MenPage selectingDropDown(){
-        Thread.sleep(2000);
+        sleep(2000);
        actions.selectFromDropdown(selectFromDropdown,select -> select.getOptions().stream()
                .filter(opt -> opt.getText().contains("men"))
                .findFirst()
