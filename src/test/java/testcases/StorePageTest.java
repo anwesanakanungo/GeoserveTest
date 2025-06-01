@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.MenPage;
 import pages.StorePage;
+import utils.assertutil.AssertUtils;
 
 public class StorePageTest extends BaseTest{
     @SneakyThrows
@@ -16,7 +17,8 @@ public class StorePageTest extends BaseTest{
        MenPage menPage= homePage.goTo(ConfigReader.getValue("base-url"))
                 .clickOnStore()
                 .selectingDropDown();
-        Assert.assertTrue(menPage.isDisplayed());
+       // Assert.assertTrue(menPage.isDisplayed());
+        AssertUtils.assertTrue(menPage.isDisplayed(),"men page is displyed");
     }
 
 

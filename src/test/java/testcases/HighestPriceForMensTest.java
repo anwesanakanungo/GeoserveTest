@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.MenPage;
 import pojo.TestData;
+import utils.assertutil.AssertUtils;
 import utils.datautil.JsonReader;
 
 import java.util.List;
@@ -26,7 +27,8 @@ public class HighestPriceForMensTest extends BaseTest {
                 .clickOnMen();
         List<String> priceList = menPage.getAllItemPriceMen();
         String actualPrice = priceList.stream().sorted().findFirst().get();
-        Assert.assertEquals(actualPrice, testData.getHigestPriceMenItem());
+        //Assert.assertEquals(actualPrice, testData.getHigestPriceMenItem());
+        AssertUtils.assertEquals(actualPrice, testData.getHigestPriceMenItem(),"Test data is equal");
         log.info("Actual text" +actualPrice +"expected" +testData.getHigestPriceMenItem());
     }
 }

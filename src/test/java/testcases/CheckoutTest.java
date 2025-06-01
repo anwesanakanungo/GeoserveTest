@@ -11,6 +11,7 @@ import pages.CheckoutPage;
 import pages.HomePage;
 import pojo.TestData;
 import randomtestdata.RandomUtil;
+import utils.assertutil.AssertUtils;
 import utils.datautil.JsonReader;
 @Slf4j
 @Epic("ECommerce Test")
@@ -42,7 +43,7 @@ public class CheckoutTest extends BaseTest {
                 .enterZip(RandomUtil.getNumber())
                 .clickPlaceOrderBtn();
         String actualResult = checkoutPage.getTitle();
-        Assert.assertEquals(actualResult, testData.getCheckoutMessage());
+        AssertUtils.assertEquals(actualResult,testData.getCheckoutMessage(),"Test data is equal");
         log.info("Actual text{}expected{}", actualResult, testData.getCheckoutMessage());
     }
 }

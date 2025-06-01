@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 import pages.CartPage;
 import pages.HomePage;
 import pojo.TestData;
+import utils.assertutil.AssertUtils;
 import utils.datautil.JsonReader;
 @Epic("ECommerce Test")
 @Feature("Cart content test")
@@ -28,7 +29,8 @@ public class CartContentTest extends BaseTest {
                 .clickAddToCart()
                 .clickViewCart();
         String actualResult= cartPage.getProductDetails();
-        Assert.assertEquals(actualResult,testData.getProductName());
-        log.info("Actual text{}expected{}", actualResult, testData.getProductName());
+       // Assert.assertEquals(actualResult,testData.getProductName());
+       // log.info("Actual text{}expected{}", actualResult, testData.getProductName());
+        AssertUtils.assertEquals(actualResult,testData.getProductName(),"Test data is equal");
     }
 }

@@ -10,6 +10,7 @@ import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.StorePage;
 import pojo.TestData;
+import utils.assertutil.ListAssertUtils;
 import utils.datautil.JsonReader;
 
 import java.util.List;
@@ -33,7 +34,8 @@ public class ProductSearchTest extends BaseTest {
                 .enterTextToSearch(testData.getSearch())
                 .clickOnSearchBtn();
         List<String> actualResult = storePage.allSearchResults();
-        Assert.assertListContainsObject(actualResult, testData.getProductName(), "Search Contains message");
-        log.info("Actual result"+actualResult +"expected= " +testData.getProductName());
+       // Assert.assertListContainsObject(actualResult, testData.getProductName(), "Search Contains message");
+        ListAssertUtils.assertContains(actualResult, testData.getProductName(), "Search Contains message");
+        log.info("Actual result{}expected= {}", actualResult, testData.getProductName());
     }
 }

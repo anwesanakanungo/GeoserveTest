@@ -5,6 +5,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HomePage;
+import utils.assertutil.AssertUtils;
+
 @Slf4j
 public class HomePageFindMoreTest extends BaseTest{
     @Test
@@ -14,7 +16,7 @@ public class HomePageFindMoreTest extends BaseTest{
             .goTo(ConfigReader.getValue("base-url"))
             .clickOnFindMore()
             .getContactUsText();
-    Assert.assertEquals("Contact Us",expectedResult);
-    log.info("Actual text Contact Us expected" +expectedResult);
+        AssertUtils.assertEquals("Contact Us",expectedResult,"Test data is equal");
+        log.info("Actual text Contact Us expected{}", expectedResult);
     }
 }

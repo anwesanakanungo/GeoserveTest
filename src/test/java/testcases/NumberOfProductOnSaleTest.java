@@ -6,6 +6,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.StorePage;
+import utils.assertutil.AssertUtils;
+
 @Slf4j
 public class NumberOfProductOnSaleTest extends BaseTest {
     private HomePage homePage;
@@ -17,7 +19,8 @@ public class NumberOfProductOnSaleTest extends BaseTest {
                 .goTo(ConfigReader.getValue("base-url"))
                 .clickOnStore()
                 .allSalesResults();
-        Assert.assertEquals(3, expectedResult);
+        //Assert.assertEquals(3, expectedResult);
+        AssertUtils.assertEquals(3, expectedResult,"Test data is equal");
         log.info("Actual  sales is 3 expected =" +expectedResult);
     }
 
@@ -28,8 +31,9 @@ public class NumberOfProductOnSaleTest extends BaseTest {
                 .goTo(ConfigReader.getValue("base-url"))
                 .clickOnStore()
                 .allProductResults();
-        Assert.assertEquals(8, expectedResult);
-        log.info("Actual total is 8 expected=" +expectedResult);
+        //Assert.assertEquals(8, expectedResult);
+        AssertUtils.assertEquals(8, expectedResult,"Test data is equal");
+        log.info("Actual total is 8 expected={}", expectedResult);
     }
 
     @Test
@@ -40,7 +44,8 @@ public class NumberOfProductOnSaleTest extends BaseTest {
                 .clickOnStore()
                 .goToSecondPage()
                 .allProductResults();
-        Assert.assertEquals(5, expectedResult);
+       // Assert.assertEquals(5, expectedResult);
+        AssertUtils.assertEquals(5, expectedResult,"Test data is equal");
         log.info("Actual total in second page is 5 expected=" +expectedResult);
     }
 
@@ -52,7 +57,8 @@ public class NumberOfProductOnSaleTest extends BaseTest {
                 .clickOnStore()
                 .goToSecondPage()
                 .allSalesResults();
-        Assert.assertEquals(2, expectedResult);
+       // Assert.assertEquals(2, expectedResult);
+        AssertUtils.assertEquals(2, expectedResult,"Test data is equal");
         log.info("Actual sale in second page is 2 expected =" +expectedResult);
     }
 
@@ -63,6 +69,7 @@ public class NumberOfProductOnSaleTest extends BaseTest {
                 .clickOnStore()
                 .goToSecondPage();
         Assert.assertTrue(store.previousPageButtonExist());
+        AssertUtils.assertTrue(store.previousPageButtonExist(),"Store button exist");
 
     }
 }

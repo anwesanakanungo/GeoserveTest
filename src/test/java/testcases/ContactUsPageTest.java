@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 import pages.ContactUsPage;
 import pages.HomePage;
 import pojo.ContactUsPageTestData;
+import utils.assertutil.AssertUtils;
 import utils.datautil.JsonReader;
 @Slf4j
 public class ContactUsPageTest extends BaseTest{
@@ -30,7 +31,8 @@ public class ContactUsPageTest extends BaseTest{
                 .goTo(ConfigReader.getValue("base-url"))
                 .clickOnContact();
         String actualResultText= contactUsPage.getContactUsText();
-        Assert.assertEquals(actualResultText,contactUsPageTestData.getTextMessage());
+        //Assert.assertEquals(actualResultText,contactUsPageTestData.getTextMessage());
+        AssertUtils.assertEquals(actualResultText,contactUsPageTestData.getTextMessage(),"Test data is equal");
         log.info("Actual text" +actualResultText +"expected" +contactUsPageTestData.getTextMessage());
     }
 }
