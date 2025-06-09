@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="TestEcommerce" parallel="methods" thread-count="4">
+<suite name="TestEcommerce" parallel="classes" thread-count="20">
     <listeners>
         <listener class-name="listerners.AnnotationTransformer"/>
     </listeners>
@@ -17,6 +17,9 @@
             <class name="testcases.HomePageFindMoreTest" />
             <class name="testcases.NumberOfProductOnSaleTest" />
             <class name="testcases.StorePageTest" />
+            <class name="testcases.SoftAssertionTest"/>
+            <class name="testcases.WomenPageTest"/>
+            <class name="testcases.AccessoriesTest"/>
         </classes>
     </test>
 

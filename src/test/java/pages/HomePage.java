@@ -12,6 +12,8 @@ public class HomePage extends BasePage {
     private final By menLink=By.xpath("//a[text()='Men']");
     private final By contactUsLink=By.xpath("//a[text()='Contact Us']");
     private final By findMore=By.xpath("//a[text()='Find More']");
+    private final By womenLink=By.xpath("//a[text()='Women']");
+    private final By accessoriesLink=By.xpath("//a[text()='Accessories']");
 
     @Override
     public boolean isDisplayed() {
@@ -48,5 +50,15 @@ public class HomePage extends BasePage {
         actions.clickElement(findMore);
         log.info("Login to the website find more link");
         return new ContactUsPage(driver);
+    }
+    public WomenPage clickOnWomen() {
+        actions.clickElement(womenLink);
+        log.info(String.format("Login to the website men link = {}%s", menLink));
+        return new WomenPage(driver);
+    }
+    public AccessoriesPage clickOnAccessoriesLink() {
+        actions.clickElement(accessoriesLink);
+        log.info(String.format("Login to the website men link = {}%s", menLink));
+        return new AccessoriesPage(driver);
     }
 }
