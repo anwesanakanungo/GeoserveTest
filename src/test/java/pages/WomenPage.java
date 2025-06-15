@@ -4,11 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class WomenPage extends BasePage{
-    private final By totalSale=By.xpath("//span[text()='Sale!']");
-    private final By totalWomenItems=By.xpath("//a[@class='ast-loop-product__link']");
-    private final By firstWomenItem=By.xpath("(//a[@class='ast-loop-product__link'])[1]");
+    private ItemOnSaleAllPage itemOnSaleAllPage;
+
     public WomenPage(WebDriver driver) {
         super(driver);
+        this.itemOnSaleAllPage=new ItemOnSaleAllPage(driver);
     }
 
     @Override
@@ -16,14 +16,13 @@ public class WomenPage extends BasePage{
         return false;
     }
     public int totalSale(){
-        return driver.findElements(totalSale).size();
+        return driver.findElements(itemOnSaleAllPage.getTotalSale()).size();
     }
-    public int totalWomenProductCount(){
-        return driver.findElements(totalWomenItems).size();
+    public int totalProductCount(){
+        return driver.findElements(itemOnSaleAllPage.getTotalWomenItems()).size();
     }
-    public String firstWomenProductName(){
-        return driver.findElement(firstWomenItem).getText();
+    public String firstProductName(){
+        return driver.findElement(itemOnSaleAllPage.getFirstWomenItem()).getText();
     }
-
 
 }

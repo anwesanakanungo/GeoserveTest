@@ -5,6 +5,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import utils.ui.ElementActions;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Slf4j
 public class HomePage extends BasePage {
     ElementActions actions = new ElementActions(driver);
@@ -14,6 +18,7 @@ public class HomePage extends BasePage {
     private final By findMore=By.xpath("//a[text()='Find More']");
     private final By womenLink=By.xpath("//a[text()='Women']");
     private final By accessoriesLink=By.xpath("//a[text()='Accessories']");
+    private final By categoryDropdown=By.id("product_cat");
 
     @Override
     public boolean isDisplayed() {
@@ -61,4 +66,8 @@ public class HomePage extends BasePage {
         log.info(String.format("Login to the website men link = {}%s", menLink));
         return new AccessoriesPage(driver);
     }
+    public List<String> getDropDownValues(){
+       return actions.dropdownValues(categoryDropdown).stream().map(webElement -> webElement.getText()).collect(Collectors.toList());
+    }
+
 }

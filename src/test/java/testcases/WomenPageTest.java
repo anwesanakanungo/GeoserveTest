@@ -23,7 +23,7 @@ public class WomenPageTest extends BaseTest{
         WomenPage womenPage = homePage
                 .goTo(ConfigReader.getValue("base-url"))
                 .clickOnWomen();
-        AssertUtils.assertEquals(7, womenPage.totalWomenProductCount(), "Total No of Women product count");
+        AssertUtils.assertEquals(7, womenPage.totalProductCount(), "Total No of Women product count");
     }
     @Test
     public void testFirstWomenProductName(){
@@ -31,6 +31,6 @@ public class WomenPageTest extends BaseTest{
         WomenPage womenPage = homePage
                 .goTo(ConfigReader.getValue("base-url"))
                 .clickOnWomen();
-        AssertUtils.assertEquals("Anchor Bracelet", womenPage.firstWomenProductName(), "First Women product Name");
+        AssertUtils.assertEquals("Anchor Bracelet", womenPage.firstProductName(), "First Women product Name");
     }
 }

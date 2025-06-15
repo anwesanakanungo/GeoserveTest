@@ -1,6 +1,9 @@
 package browser;
 
 public class DriverManagerFactory {
+    private DriverManagerFactory() {
+    }
+
     public static DriverManager getManager(DriverType type) {
 
         DriverManager driverManager = null;

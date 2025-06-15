@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.List;
 import java.util.function.Consumer;
 
 public class ElementActions {
@@ -102,10 +103,10 @@ public void selectFromDropdown(By locator, Consumer<Select> selectionLogic) {
     Select select = new Select(dropdownElement);
     selectionLogic.accept(select);
 }
-    public void selectFromDropdown(By locator, Consumer<Select> selectionLogic, int timeoutSeconds) {
+    public List<WebElement> dropdownValues(By locator) {
       WebElement dropdownElement = waitHelper.waitForElementToBeClickable(locator);
         Select select = new Select(dropdownElement);
-        selectionLogic.accept(select);
+       return select.getOptions();
     }
 
 
